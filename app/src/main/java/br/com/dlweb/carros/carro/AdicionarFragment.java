@@ -114,10 +114,10 @@ public class AdicionarFragment extends Fragment {
             String nomeModelo = spModelo.getSelectedItem().toString();
             c.setId_modelo((listModeloId.get(listModeloName.indexOf(nomeModelo))));
             c.setNome(etNome.getText().toString());
-            c.setNome(etRenavam.getText().toString());
-            c.setNome(etValor.getText().toString());
-            c.setNome(etAno.getText().toString());
-            c.setNome(etPlaca.getText().toString());
+            c.setRenavam(Integer.parseInt(etRenavam.getText().toString()));
+            c.setValor(Integer.parseInt(etValor.getText().toString()));
+            c.setAno(Integer.parseInt(etAno.getText().toString()));
+            c.setPlaca(etPlaca.getText().toString());
 
             CollectionReference collectionCarro = db.collection("Carros");
             collectionCarro.add(c).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
